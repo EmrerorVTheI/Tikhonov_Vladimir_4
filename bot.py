@@ -1,7 +1,10 @@
 import logging
 import requests
+import os
+from dotenv import load_dotenv
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
 from telegram import Update
+from tokens import TELEGRAM_TOKEN, EXCHANGE_API_KEY
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -9,9 +12,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-#Токены и ключи
-TELEGRAM_TOKEN = "8921394203:AAER6Cn5TaT99h0Itv2xyi0HJ6gRRYzTnTQ" #Токен
-EXCHANGE_API_KEY = "327eaf57dc67130fc1b50ae0" #ExchangeRate-API
+#
 
 #Основные валюты
 COMMON_CURRENCIES = {
